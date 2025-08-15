@@ -27,7 +27,7 @@ const AdminDashboard = () => {
     <>
       <section className="bg-[url('/bg.jpg')] bg-cover bg-center h-screen w-full mb-40 relative">
         <Header />
-        <div className="max-w-5xl mx-auto py-60 grid">
+        <div className="max-w-5xl mx-auto py-30 lg:py-60 grid">
           <div className="flex gap-2 justify-center">
             {[...Array(5)].map((_, i) => (
               <svg
@@ -46,7 +46,7 @@ const AdminDashboard = () => {
             ))}
           </div>
           <div className="text-center">
-            <h1 className="text-9xl text-white font-medium playfair">
+            <h1 className="text-6xl lg:text-9xl text-white font-medium playfair">
               Admin Reservations
             </h1>
           </div>
@@ -69,7 +69,7 @@ const AdminDashboard = () => {
               </h1>
             </div>
 
-            <div className="mt-5 w-[70%] h-40 grid grid-cols-4 mx-auto px-6 py-9 gap-10 bg-[#d6c3ac] shadow-md">
+            <div className="mt-5 w-[70%] h-auto rounded-xl lg:h-40 grid lg:grid-cols-4 mx-auto px-6 py-9 gap-10 bg-[#d6c3ac] shadow-md">
               <div>
                 <h1 className="text-sm font-medium text-gray-700">Check-In</h1>
                 <p className="mt-1 w-full p-2 border border-gray-300 rounded-md">{r.checkInDate}</p>

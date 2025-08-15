@@ -4,11 +4,11 @@ function Footer() {
       {/* Contact Section */}
       <div
         id="contact-us"
-        className="flex justify-between items-center max-w-[90%] mx-auto"
+        className="flex flex-col md:flex-row gap-4 lg:gap-0 justify-between items-center max-w-[90%] mx-auto"
       >
         <img src="/logo.png" alt="Logo" />
 
-        <div className="text-white text-xl grid justify-items-end gap-4">
+        <div className="text-white text-xl grid lg:justify-items-end justify-items-start gap-4">
           <p>
             Contact us:
             <span className="ml-2">0700 000 000</span>
@@ -21,7 +21,7 @@ function Footer() {
       <div className="flex justify-between items-center mt-6 border-t-2 border-[#d1964e] pt-6 max-w-[90%] mx-auto">
         <p className="text-white">© 2025 ThemeMascot Agency</p>
 
-        <div className="flex items-center gap-4 mt-5">
+        <div className="flex items-center gap-4 mt-0 lg:mt-5">
           <a href="#">
             <img src="/f.svg" alt="Facebook" />
           </a>

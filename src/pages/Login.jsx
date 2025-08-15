@@ -75,15 +75,15 @@ export default function LoginRegister() {
           Home
         </Link>
       </div>
-      <div className="mt-[10%] border bg-[#F8F4EF] rounded-[10px] w-2/4 mx-auto text-sm font-medium flex items-center">
+      <div className="mt-[50%] lg:mt-[10%] border bg-[#F8F4EF] rounded-[10px] w-[90%] lg:w-2/4 mx-auto text-sm font-medium flex items-center">
         <div
-          className="bg-[url('/bg.jpg')] w-[50%] h-130 rounded-l-[10px]"
+          className="bg-[url('/bg.jpg')] w-[50%] h-130 rounded-l-[10px] hidden lg:block"
           style={{ backgroundSize: "cover", backgroundPosition: "center" }}
         >
           <img className="p-3" src="/logo.png" alt="Logo" />
         </div>
 
-        <div className="grid items-center justify-center gap-4 p-10 w-[50%]">
+        <div className="grid items-center justify-center gap-4 p-10 w-full lg:w-[50%]">
           <div className="w-full">
             <h1 className="text-2xl">
               {isLogin ? "Login with email" : "Register with email"}

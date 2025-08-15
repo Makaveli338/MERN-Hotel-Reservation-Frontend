@@ -63,7 +63,7 @@ export default function UserDashboardPage() {
       <section className="bg-[url('/bg.jpg')] bg-cover bg-center h-screen w-full mb-40 relative">
         <Header />
 
-        <div className="max-w-5xl mx-auto py-60 grid">
+        <div className="max-w-5xl mx-auto lg:py-60 py-10 grid">
           <div className="flex gap-2 justify-center">
             {Array(5)
               .fill(null)
@@ -85,7 +85,7 @@ export default function UserDashboardPage() {
           </div>
 
           <div className="text-center">
-            <h1 className="text-9xl text-white font-medium playfair">
+            <h1 className=" text-6xl lg:text-9xl text-white font-medium playfair">
               Book your dream vacation with us
             </h1>
             <button
@@ -114,7 +114,7 @@ export default function UserDashboardPage() {
         </div>
 
         {/* Booking Form */}
-        <div className="rounded-xl border border-[#AE7D54] absolute -bottom-20 left-1/2 transform -translate-x-1/2 w-[80%] h-40 grid grid-cols-4 mx-auto px-6 py-9 gap-10 bg-white shadow-md">
+        <div className="rounded-xl border border-[#AE7D54] absolute -bottom-90 lg:-bottom-20 left-1/2 transform -translate-x-1/2 w-[80%] h-auto lg:h-40 grid  lg:grid-cols-4 mx-auto px-6 py-9 gap-10 bg-white shadow-md">
           <div>
             <label className="block text-sm font-medium text-gray-700">
               Check-In
@@ -169,8 +169,11 @@ export default function UserDashboardPage() {
       )}
 
       {/* User's reservations */}
+      <div className="mt-60">
       <ReservationsList />
       <Footer />
+      </div>
+        
     </>
   );
 }

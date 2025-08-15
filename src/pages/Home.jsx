@@ -32,7 +32,7 @@ function HomePage() {
           <Header />
 
           {/* Star Icons and heading */}
-          <div className="max-w-5xl mx-auto py-60 grid">
+          <div className="max-w-5xl mx-auto py-30 lg:py-60 grid">
             {/* Star icons */}
             <div className="flex gap-2 justify-center">
               {[...Array(5)].map((_, i) => (
@@ -54,11 +54,11 @@ function HomePage() {
 
             {/* Heading and button */}
             <div className="text-center">
-              <h1 className="text-9xl text-white font-medium playfair">
+              <h1 className="text-6xl md:text-9xl text-white font-medium playfair">
                 Book your dream vacation with us
               </h1>
 
-              <button className="text-white bg-[#d1964e] hover:bg-[#866a47] mt-5 pl-8 py-3 w-40 rounded-full hover:cursor-pointer flex justify-self-center">
+              <button className="text-white bg-[#d1964e] hover:bg-[#866a47] mt-5 pl-8 py-3 w-40 rounded-full hover:cursor-pointer flex justify-self-center mb-4">
                 Book now
                 <svg
                   width="24"

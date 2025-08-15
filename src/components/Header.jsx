@@ -17,17 +17,20 @@ function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <section className="py-6 flex justify-between items-center max-w-[90%] mx-auto">
-        <img src="/logo.png" alt="Logo" />
+      <section className="py-6 flex flex-col md:flex-row justify-between items-center max-w-[90%] mx-auto gap-4 md:gap-0">
+        <img src="/logo.png" alt="Logo" className="w-32 md:w-auto" />
 
-        <div className="text-white font-semibold text-xl flex gap-4">
+        {/* Links */}
+        <div className="flex  text-white font-semibold text-xl gap-2 md:gap-4 items-center">
           <Link to="/" className="text-white hover:underline">
             Home
           </Link>
 
           {user && (
             <Link
-              to={user.role === "admin" ? "/admin-dashboard" : "/user-dashboard"}
+              to={
+                user.role === "admin" ? "/admin-dashboard" : "/user-dashboard"
+              }
               className="text-white hover:underline"
             >
               Dashboard
@@ -35,7 +38,8 @@ function Navbar() {
           )}
         </div>
 
-        <div>
+        {/* Auth Buttons */}
+        <div className="flex flex-col md:flex-row gap-2 md:gap-0">
           {user ? (
             <button
               onClick={handleLogout}

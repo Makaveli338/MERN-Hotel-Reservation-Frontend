@@ -46,7 +46,7 @@ const ReservationsList = () => {
       </div>
 
       {list.map((r) => (
-        <div key={r.id} className="mt-5 w-[70%] h-40 grid grid-cols-4 mx-auto px-6 py-9 gap-10 bg-white shadow-md rounded-xl border border-[#AE7D54]">
+        <div key={r.id} className="mt-5 w-[70%] h-auto lg:h-40 grid lg:grid-cols-4 mx-auto px-6 py-9 gap-10 bg-white shadow-md rounded-xl border border-[#AE7D54]">
           <div>
             <h1 className="text-sm font-medium text-gray-700">Check-In</h1>
             <p className="mt-1 w-full p-2 border border-gray-300 rounded-md">{formatDate(r.checkInDate)}</p>
