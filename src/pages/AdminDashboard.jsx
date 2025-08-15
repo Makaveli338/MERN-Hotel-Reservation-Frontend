@@ -23,6 +23,14 @@ const AdminDashboard = () => {
   const handleDecline = (id) =>
     dispatch(updateStatus({ id, status: "Declined" }));
 
+  const formatDate = (dateStr) => {
+  return new Date(dateStr).toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+};
+
   return (
     <>
       <section className="bg-[url('/bg.jpg')] bg-cover bg-center h-screen w-full mb-40 relative">
@@ -72,11 +80,11 @@ const AdminDashboard = () => {
             <div className="mt-5 w-[70%] h-auto rounded-xl lg:h-40 grid lg:grid-cols-4 mx-auto px-6 py-9 gap-10 bg-[#d6c3ac] shadow-md">
               <div>
                 <h1 className="text-sm font-medium text-gray-700">Check-In</h1>
-                <p className="mt-1 w-full p-2 border border-gray-300 rounded-md">{r.checkInDate}</p>
+                <p className="mt-1 w-full p-2 border border-gray-300 rounded-md">{formatDate(r.checkInDate)}</p>
               </div>
               <div>
                 <h1 className="text-sm font-medium text-gray-700">Check-Out</h1>
-                <p className="mt-1 w-full p-2 border border-gray-300 rounded-md">{r.checkOutDate}</p>
+                <p className="mt-1 w-full p-2 border border-gray-300 rounded-md">{formatDate(r.checkOutDate)}</p>
               </div>
               <div>
                 <h1 className="text-sm font-medium text-gray-700">Guests</h1>
