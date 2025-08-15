@@ -169,7 +169,7 @@ export default function UserDashboardPage() {
       )}
 
       {/* User's reservations */}
-      <div className="mt-60">
+      <div className="mt-60 flex flex-col gap-4">
       <ReservationsList />
       <Footer />
       </div>
