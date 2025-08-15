@@ -63,7 +63,7 @@ export default function UserDashboardPage() {
       <section className="bg-[url('/bg.jpg')] bg-cover bg-center h-screen w-full mb-40 relative">
         <Header />
 
-        <div className="max-w-5xl mx-auto lg:py-60 py-10 grid">
+        <div className="max-w-5xl mx-auto lg:py-60 py-5 grid">
           <div className="flex gap-2 justify-center">
             {Array(5)
               .fill(null)
