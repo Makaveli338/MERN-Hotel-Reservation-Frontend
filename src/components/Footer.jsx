@@ -1,0 +1,40 @@
+function Footer() {
+  return (
+    <section  className="bg-[#1f1306] py-6 mt-20">
+      {/* Contact Section */}
+      <div
+        id="contact-us"
+        className="flex justify-between items-center max-w-[90%] mx-auto"
+      >
+        <img src="/logo.png" alt="Logo" />
+
+        <div className="text-white text-xl grid justify-items-end gap-4">
+          <p>
+            Contact us:
+            <span className="ml-2">0700 000 000</span>
+          </p>
+          <p>info@hoteler.com</p>
+        </div>
+      </div>
+
+      {/* Footer Bottom */}
+      <div className="flex justify-between items-center mt-6 border-t-2 border-[#d1964e] pt-6 max-w-[90%] mx-auto">
+        <p className="text-white">© 2025 ThemeMascot Agency</p>
+
+        <div className="flex items-center gap-4 mt-5">
+          <a href="#">
+            <img src="/f.svg" alt="Facebook" />
+          </a>
+          <a href="#">
+            <img src="/x.svg" alt="Twitter/X" />
+          </a>
+          <a href="#">
+            <img src="/linked-in.svg" alt="LinkedIn" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Footer;
