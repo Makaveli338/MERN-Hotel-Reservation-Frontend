@@ -16,7 +16,6 @@ const statusColor = (status) => {
   }
 };
 
-
 const formatDate = (dateStr) => {
   return new Date(dateStr).toLocaleDateString("en-GB", {
     day: "2-digit",
@@ -24,7 +23,6 @@ const formatDate = (dateStr) => {
     year: "numeric",
   });
 };
-
 
 const ReservationsList = () => {
   const dispatch = useDispatch();
@@ -35,37 +33,63 @@ const ReservationsList = () => {
     dispatch(fetchReservations({ isAdmin: false, userName: user?.name }));
   }, [dispatch, user?.name]);
 
-  if (loading) return <p className="text-center mt-10">Loading your bookings…</p>;
+  if (loading)
+    return <p className="text-center mt-10">Loading your bookings…</p>;
   if (error) return <p className="text-center mt-10 text-red-600">{error}</p>;
-  if (!list.length) return <p className="text-center mt-10">No bookings yet.</p>;
+  if (!list.length)
+    return <p className="text-center mt-10">No bookings yet.</p>;
 
   return (
-    <div className="mt-20">
+    <div className="mt-80 lg:mt-0 ">
       <div className="flex text-[#AE7D54] text-2xl justify-center gap-2">
         <p className="font-sans">Your bookings</p>
       </div>
 
       {list.map((r) => (
-        <div className="mt-30">
-        <div key={r.id} className="mt-5 w-[80%] h-auto lg:h-40 grid lg:grid-cols-4 mx-auto px-6 py-9 gap-10 bg-white shadow-md rounded-xl border border-[#AE7D54]">
-          <div>
-            <h1 className="text-sm font-medium text-gray-700">Check-In</h1>
-            <p className="mt-1 w-full p-2 border border-gray-300 rounded-md">{formatDate(r.checkInDate)}</p>
+        <div className="mt-10 ">
+          <div
+            key={r.id}
+            className="mt-5 w-[80%] h-auto lg:h-40 grid lg:grid-cols-5 mx-auto px-6 py-9 gap-10 bg-white shadow-md rounded-xl border border-[#AE7D54]"
+          >
+            <div>
+              <h1 className="text-sm font-medium text-gray-700">Check-In</h1>
+              <p className="mt-1 w-full p-2 border border-gray-300 rounded-md">
+                {formatDate(r.checkInDate)}
+              </p>
+            </div>
+            <div>
+              <h1 className="text-sm font-medium text-gray-700">Check-Out</h1>
+              <p className="mt-1 w-full p-2 border border-gray-300 rounded-md">
+                {formatDate(r.checkOutDate)}
+              </p>
+            </div>
+            <div>
+              <h1 className="text-sm font-medium text-gray-700">Guests</h1>
+              <p className="mt-1 w-full p-2 border border-gray-300 rounded-md">
+                {r.guests}
+              </p>
+            </div>
+
+            {/* Selected room */}
+            <div>
+              <h1 className="text-sm font-medium text-gray-700">Reseved Room</h1>
+            <div className="flex justify-between items-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-white  h-fit">
+              <p className="text-gray-600 font-medium">
+                {r.room || "Not specified"}
+              </p>
+            </div>
+            </div>
+
+            <div>
+              <span
+                className={`mt-4 w-full py-2 px-4 text-white font-medium rounded-md flex justify-center items-center ${statusColor(
+                  r.status
+                )}`}
+              >
+                {r.status.toUpperCase()}
+              </span>
+            </div>
           </div>
-          <div>
-            <h1 className="text-sm font-medium text-gray-700">Check-Out</h1>
-            <p className="mt-1 w-full p-2 border border-gray-300 rounded-md">{formatDate(r.checkOutDate)}</p>
-          </div>
-          <div>
-            <h1 className="text-sm font-medium text-gray-700">Guests</h1>
-            <p className="mt-1 w-full p-2 border border-gray-300 rounded-md">{r.guests}</p>
-          </div>
-          <div>
-            <span className={`mt-4 w-full py-2 px-4 text-white font-medium rounded-md flex justify-center items-center ${statusColor(r.status)}`}>
-              {r.status.toUpperCase()}
-            </span>
-          </div>
-        </div>
         </div>
       ))}
     </div>

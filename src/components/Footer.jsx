@@ -22,13 +22,13 @@ function Footer() {
         <p className="text-white">© 2025 ThemeMascot Agency</p>
 
         <div className="flex items-center gap-4 mt-0 lg:mt-5">
-          <a href="#">
+          <a href="https://www.facebook.com/">
             <img src="/f.svg" alt="Facebook" />
           </a>
-          <a href="#">
+          <a href="https://x.com/">
             <img src="/x.svg" alt="Twitter/X" />
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/home">
             <img src="/linked-in.svg" alt="LinkedIn" />
           </a>
         </div>

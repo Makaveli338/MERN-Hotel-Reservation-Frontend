@@ -58,24 +58,8 @@ function HomePage() {
                 Book your dream vacation with us
               </h1>
 
-              <button className="text-white bg-[#d1964e] hover:bg-[#866a47] mt-5 pl-8 py-3 w-40 rounded-full hover:cursor-pointer flex justify-self-center mb-4">
-                Book now
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="ml-2"
-                >
-                  <path
-                    d="M9 18L15 12L9 6"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+              <button className="text-white bg-[#d1964e] hover:bg-[#866a47] mt-5 px-[10px] py-3 rounded-full hover:cursor-pointer flex justify-self-center mb-4">
+                Book now               
               </button>
             </div>
           </div>

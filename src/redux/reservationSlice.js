@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axiosInstance  from "../api/axios"; // use your central axiosInstance instancex
+import axiosInstance from "../api/axios"; // use your central axiosInstance instancex
 
 export const addReservation = createAsyncThunk(
   "reservations/addReservation",
@@ -12,7 +12,7 @@ export const addReservation = createAsyncThunk(
     const res = await axiosInstance.post("/bookings", newReservation, {
       headers: {
         Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
     });
     return res.data;
@@ -34,14 +34,13 @@ export const fetchReservations = createAsyncThunk(
   }
 );
 
-
 // Update reservation status
 export const updateStatus = createAsyncThunk(
   "reservations/updateStatus",
   async ({ id, status }, { getState }) => {
     const token = getState().auth.token; // get token from Redux store
     const res = await axiosInstance.patch(
-      `/bookings/${id}/status`, 
+      `/bookings/${id}/status`,
       { status },
       {
         headers: {
@@ -53,9 +52,6 @@ export const updateStatus = createAsyncThunk(
     return res.data;
   }
 );
-
-
-
 
 const reservationsSlice = createSlice({
   name: "reservations",
@@ -88,12 +84,11 @@ const reservationsSlice = createSlice({
 
       // Update
       .addCase(updateStatus.fulfilled, (state, action) => {
-      const index = state.list.findIndex((r) => r._id === action.payload._id);
-      if (index !== -1) {
-        state.list[index] = action.payload;
-      }
-    });
-    
+        const index = state.list.findIndex((r) => r._id === action.payload._id);
+        if (index !== -1) {
+          state.list[index] = action.payload;
+        }
+      });
   },
 });
 

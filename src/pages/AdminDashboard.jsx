@@ -77,7 +77,7 @@ const AdminDashboard = () => {
               </h1>
             </div>
 
-            <div className="mt-5 w-[70%] h-auto rounded-xl lg:h-40 grid lg:grid-cols-4 mx-auto px-6 py-9 gap-10 bg-[#d6c3ac] shadow-md">
+            <div className="mt-5 w-[70%] h-auto rounded-xl lg:h-40 grid lg:grid-cols-5 mx-auto px-6 py-9 gap-10 bg-[#d6c3ac] items-center shadow-md">
               <div>
                 <h1 className="text-sm font-medium text-gray-700">Check-In</h1>
                 <p className="mt-1 w-full p-2 border border-gray-300 rounded-md">{formatDate(r.checkInDate)}</p>
@@ -91,33 +91,47 @@ const AdminDashboard = () => {
                 <p className="mt-1 w-full p-2 border border-gray-300 rounded-md">{r.guests}</p>
               </div>
 
+              {/* Selected room */}
+              <div>
+                <h1 className="text-sm font-medium text-gray-700">Reserved Room</h1>
+            <div className="flex justify-between items-center py-2 px-4 border border-gray-300 rounded-lg h-fit shadow-sm bg-white hover:border-[#d1964e] transition cursor-pointer">
+              <p className="text-gray-600 font-medium">
+                {r.room || "Not specified"}
+              </p>
+            </div>
+              </div>
+
+                 <div>
+                <h1 className="text-sm font-medium text-gray-700">Status</h1>
               <div className="flex gap-2">
+                
                 {r.status === "Pending" && (
                   <>
                     <button
                       onClick={() => handleApprove(r._id)}
-                      className="mt-4 w-1/2 py-2 px-4 bg-[#45db31] text-white font-medium rounded-md flex justify-center items-center cursor-pointer"
+                      className=" w-1/2 h-fit py-2 px-4 bg-[#45db31] text-white font-medium rounded-md flex justify-center items-center cursor-pointer"
                     >
                       Approve
                     </button>
                     <button
                       onClick={() => handleDecline(r._id)}
-                      className="mt-4 w-1/2 py-2 px-4 bg-[#d61b1b] text-white font-medium rounded-md flex justify-center items-center cursor-pointer"
+                      className="h-fit w-1/2 py-2 px-4 bg-[#d61b1b] text-white font-medium rounded-md flex justify-center items-center cursor-pointer"
                     >
                       Decline
                     </button>
                   </>
                 )}
                 {r.status === "Approved" && (
-                  <span className="mt-4 w-full py-2 px-4 bg-[#45db31] text-white font-medium rounded-md flex justify-center items-center">
+                  <span className="h-fit w-full py-2 px-4 bg-[#45db31] text-white font-medium rounded-md flex justify-center items-center">
                     Approved
                   </span>
                 )}
                 {r.status === "Declined" && (
-                  <span className="mt-4 w-full py-2 px-4 bg-[#d61b1b] text-white font-medium rounded-md flex justify-center items-center">
+                  <span className="h-fit w-full py-2 px-4 bg-[#d61b1b] text-white font-medium rounded-md flex justify-center items-center">
                     Declined
                   </span>
                 )}
+              </div>
               </div>
             </div>
           </div>

@@ -6,10 +6,7 @@ function RoomCard({ image, title, description, price }) {
         <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
         <p className="text-gray-600 mt-2">{description}</p>
         <div className="mt-4 flex justify-between items-center">
-          <span className="text-lg font-bold text-[#d1964e]">{price}</span>
-          <button className="px-4 py-2 bg-[#d1964e] text-white rounded-full hover:bg-[#866a47] transition-colors cursor-pointer">
-            Book Now
-          </button>
+          <span className="text-lg font-bold text-[#d1964e]">{price}</span>          
         </div>
       </div>
     </div>
